@@ -3,7 +3,6 @@ import java.io.*;
 public class Test {
     public static void main(String[] args) {
         File f = new File("j.txt");
-        String newline = System.getProperty("line.separator");
         try {
             FileInputStream fip = new FileInputStream(f);
             InputStreamReader reader = new InputStreamReader(fip);
