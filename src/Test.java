@@ -3,17 +3,31 @@ import java.io.*;
 public class Test {
     public static void main(String[] args) {
         File f = new File("j.txt");
+        String newline = System.getProperty("line.separator");
         try {
+            FileInputStream fip = new FileInputStream(f);
+            InputStreamReader reader = new InputStreamReader(fip);
+
+            StringBuffer sb = new StringBuffer();
+
+            while(reader.ready()) {
+                char currentChar = (char)reader.read();
+                sb.append(currentChar);
+                if(currentChar == '\n' || currentChar == '\r') {
+                    sb.append("haha\n");
+                }
+            }
+
+            System.out.println(sb);
+            reader.close();
+            fip.close();
+
             FileOutputStream fop = new FileOutputStream(f);
             OutputStreamWriter writer = new OutputStreamWriter(fop);
 
-            writer.append("中午");
+            writer.append(sb);
             writer.close();
             fop.close();
-
-            FileInputStream fip = new FileInputStream(f);
-            InputStreamReader reader = new InputStreamReader(fip);
-            System.out.println((char)reader.read());
 
         }catch (IOException e) {
 
