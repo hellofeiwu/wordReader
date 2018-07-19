@@ -11,9 +11,9 @@ public class Test {
             StringBuffer sb = new StringBuffer();
 
             List<String> words = new LinkedList<>();
-            while (sc.hasNext()){
-                String current = sc.next();
-                if (!current.equals("haha")) {
+            while (sc.hasNextLine()){
+                String current = sc.nextLine();
+                if (!current.equals("[[slnc 2000]]")) {
                     words.add(current);
                 }
             }
@@ -23,7 +23,7 @@ public class Test {
             while(wordsList.hasNext()) {
                 String current = wordsList.next();
                 sb.append(current + "\n");
-                sb.append("haha\n");
+                sb.append("[[slnc 2000]]\n");
             }
             System.out.println(sb);
             sc.close();
