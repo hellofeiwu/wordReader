@@ -10,33 +10,23 @@ public class Test {
             Scanner sc = new Scanner(fip);
             StringBuffer sb = new StringBuffer();
 
-//            while(reader.ready()) {
-//                char currentChar = (char)reader.read();
-//                sb.append(currentChar);
-//                if(currentChar == '\n' || currentChar == '\r') {
-//                    sb.append("haha\n");
-//                }
-//            }
-
-            //reader.read(char[] cbuf);
             List<String> words = new LinkedList<>();
             while (sc.hasNext()){
-                words.add(sc.next());
+                String current = sc.next();
+                if (!current.equals("haha")) {
+                    words.add(current);
+                }
             }
 
             ListIterator<String> wordsList = words.listIterator();
 
             while(wordsList.hasNext()) {
                 String current = wordsList.next();
-                //String next = wordsList.next();
-                //wordsList.previous();
                 sb.append(current + "\n");
-                //if(!current.equals("haha")&& !next.equals("haha")) {
-                    sb.append("haha\n");
-                //}
+                sb.append("haha\n");
             }
             System.out.println(sb);
-            //reader.close();
+            sc.close();
             fip.close();
 
             FileOutputStream fop = new FileOutputStream(f);
