@@ -19,13 +19,14 @@ public class Test {
             }
 
             ListIterator<String> wordsList = words.listIterator();
+            System.out.println("currently have " + words.size() + " words.");
 
             while(wordsList.hasNext()) {
                 String current = wordsList.next();
                 sb.append(current + "\n");
                 sb.append("[[slnc 2000]]\n");
             }
-            System.out.println(sb);
+            // System.out.println(sb);
             sc.close();
             fip.close();
 
